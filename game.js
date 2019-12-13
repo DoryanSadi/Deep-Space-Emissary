@@ -18,40 +18,46 @@ type: Phaser.AUTO,
 
 var game = new Phaser.Game(config); //Creating game object.
 
-
+var ship; 
+var moveLeft;
+var moveRight;
 
 function preload ()
 {
     this.load.image('Space', 'assets/Pictures/space.png'); //Loading background.
     
-    this.load.spritesheet('ship', 'assets/Pictures/ships_human_neutral.xcf', { framewidth: 60, frameHeight: 32} ); //loading player asset //Loading in spritesheet to create player animation. 
+    this.load.spritesheet('ship', 'assets/Pictures/ships_human_neutral.png', { frameWidth: 30, frameHeight: 32} ); //loading player asset //Loading in spritesheet to create player animation. 
     
 }
 
 function create()
 {
     
-    this.player = this.add.sprite(config.width / 2 - 50, config.height / 2, 'ship'); 
-    moveLeft = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT); 
-    moveRight = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-    
+    ship = this.add.sprite(config.width / 2 - 50, config.height / 2, 'ship').setOrigin(0.5, -8.3).setDepth(2); 
+    var background = this.add.image(400, 300, 'Space').setDepth(1); 
     this.anims.create({ //Creating an animation function giving me access to various parameters. 
         key: 'player_animation', //Giving animation a name.
         frames: this.anims.generateFrameNumbers('ship'), //Using frames directly from spritesheet.
-        frameRate: 20, //Defining the speed of the animation. 
+        frameRate: 8, //Defining the speed of the animation. 
         repeat: -1  //Defining the amount of loops. -1 for infinite loops. 
     });
+    
 
     
 }
 
 function update()
 {
+    
+  if(moveRight.isDown && ship.x < this.sys.canvas.width - ship.displayWidth * ship.originX){
+        ship.x += ship.props.speed;
+    } else if(moveLeft.isDown && ship.x > 0 + ship.displayWidth * ship.originX){
+        ship.x -= ship.props.speed;
+    } 
    
 }
 
 function createShip(x,y){
-    var ship = this.add.image(x,y, 'ship').setOrigin(0.5,1); //setting parameters for player. 
     ship.props = {};
     ship.props.speed = 5;
     return ship;
