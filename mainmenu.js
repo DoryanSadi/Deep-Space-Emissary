@@ -9,14 +9,15 @@ var startMenu = new Phaser.class({
         Phaser.Scene.call(this, {
             key: 'mainmenu'
         });
-}), 
+}, 
     
-preload function(){
+function preload () 
+    {
     //Preloading Google WebFont Loader
     game.load.script('webfont', '//ajax.google.com/ajax/libs/webfont/1.4.7/webfont.js')
 }, 
         
-create: function () {
+function create() {
     
     var optionSelection = game.add.text(80, 200, 'Deep Space Emmissary \n' +
     ' Start \n' +
@@ -33,6 +34,6 @@ create: function () {
     game.scene.start('game'); 
 }, 
     
-update: function (){
+function update(){
     //updating objects and variables
 }
