@@ -2,8 +2,13 @@
 <html>
 <head> 
 <meta charset ="UTF-8"/>
-<title>Deep Space Emissary</title>
-<script type="text/javascript" src="phaser.js"></script>
+    
+    <title>Deep Space Emissary</title>
+    
+    <!-- Loading Phaser files. -->
+    <script type="text/javascript" src="phaser.js"></script>
+    <script type="text/javascript" src="phaser.min.js"></script>
+    
 <style type="text/css"> 
     body {
         margin: 0;
@@ -11,7 +16,35 @@
     </style>
 </head>
 <body>
-    <script type="text/javascript"></script>
+    
+    <!-- Including game files in referencing order -->
+    <script type="text/javascript" src="WebFontLoader.js"></script>
+    <script type="text/javascript" src="scenes.js"></script>
+    <script type="text/javascript" src="preload.js"></script>
+    <script type="text/javascript" src="mainmenu.js"></script>
+    <script type="text/javascript" src="options.js"></script>
+    <script type="text/javascript" src="CharacterSelect.js"></script>
+    <script type="text/javascript" src="HowToPlay.js"></script>
     <script type="text/javascript" src="game.js"></script>
+   
+    
 </body>
+
+
+<body> 
+    <script>
+        
+
+
+var config = { /* When page loads, game config is created. */ 
+type: Phaser.AUTO, 
+    width: 1280, /* establishes width of game screen.    */
+    height: 720, /* establishes height of game screen.     */
+    scene: deepSpace.scenes
+        };
+
+var game = new Phaser.Game(config); //Instantiating game with config.
+        
+        </script>
+    </body>
 </html>
