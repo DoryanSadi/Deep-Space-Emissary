@@ -49,7 +49,7 @@ create: function() {
     play.once('pointerdown', function() {
         
                     console.log('From MainMenu to Gameplay');
-                    this.scene.start('GamePlay'); 
+                    this.scene.start('gameplay'); 
                     this.mainMenuMusic.stop(); /* Music stops as soon as   gameplay starts */ 
                     
                     }, this); 

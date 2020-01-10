@@ -1,6 +1,6 @@
-const COLOR_PRIMARY = 0x4e342e;
-const COLOR_LIGHT = 0x7b5e57;
-const COLOR_DARK = 0x260e04;
+const  COLOR_PRIMARY = 0x4e342e;
+const  COLOR_LIGHT = 0x7b5e57;
+const  COLOR_DARK = 0x260e04;
 
 var helpMenu = new Phaser.Class({
     /* Creating scene */ 
@@ -93,7 +93,7 @@ create: function (){
     
      var scene = this,
           menu = undefined; 
-        this.input.on('pointerdown', function (pointer) {
+        enemies.once('pointerdown', function (pointer) {
                      if(menu === undefined) {
                          menu = createEnemyList(scene, pointer.x, pointer.y, EnemyList, function(button) {
                              scene.print.text += 'Click ' + button.text + '\n'; 
