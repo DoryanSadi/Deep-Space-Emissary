@@ -25,8 +25,9 @@
     <script type="text/javascript" src="options.js"></script>
     <script type="text/javascript" src="CharacterSelect.js"></script>
     <script type="text/javascript" src="HowToPlay.js"></script>
-    <script type="text/javascript" src="Entity.js"></script>
     <script type="text/javascript" src="game.js"></script>
+
+    
    
     
 </body>
@@ -38,7 +39,14 @@
 
 
 var config = { /* When page loads, game config is created. */ 
-type: Phaser.AUTO, 
+type: Phaser.WEBGL, 
+    parent: 'phaser-example',
+    physics: {
+        default: "arcade",
+        arcade: {
+            debug: false,
+        }
+    }, 
     width: 1280, /* establishes width of game screen.    */
     height: 720, /* establishes height of game screen.     */
     scene: deepSpace.scenes
