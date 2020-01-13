@@ -32,8 +32,7 @@ var gamePlay = new Phaser.Class({
         /* Loading audio files */ 
         this.load.audio('GameMusic', 'assets/Music/ObservingTheStar.ogg'); /* Loading background music */ 
         this.load.audio('PlayerShooting', 'assets/Music/pistol.wav'); /* Loading sound when Player is shooting */ 
-        this.load.audio('EnemyShoting', 'assets/Music/shotgun.wav'); /* Loading sound when enemy shoots */ 
-        this.load.audio('Destroyed', 'assets/Music/DeathFlash.flac'); /* Loading sound when enemy or player is destroyed /* 
+   
         
         /* Loading spritesheets */ 
         this.load.spritesheet('red_ship', 'assets/Pictures/Player/ships_human_red.png', { frameWidth: 30, frameHeight : 32});
@@ -46,7 +45,7 @@ var gamePlay = new Phaser.Class({
         this.load.spritesheet('Biomech_Yellow2_Alpha', 'assets/Pictures/Enemies/ships_biomech_yellow2.png', { frameWidth: 44.5, frameHeight : 48});
         this.load.spritesheet('Biomech_Brown_Alpha', 'assets/Pictures/Enemies/ships_biomech_brown.png', { frameWidth: 46, frameHeight : 32});
         this.load.spritesheet('Biomech_Brown2_Alpha', 'assets/Pictures/Enemies/ships_biomech_brown2.png', { frameWidth: 44.5, frameHeight : 48});
-        this.load.spritesheet('FireProjectile', 'assets/Pictures/Projectiles/FireProjectile.png', { frameWidth: 19.25, frameHeight: 16}); 
+ 
         
     },
     
@@ -70,8 +69,7 @@ var gamePlay = new Phaser.Class({
         
         this.sfx = {
             Player_Bullet: this.sound.add("PlayerShooting"),
-            Explosion: this.sound.add("Destroyed"),
-            Enemy_Bullet: this.sound.add("EnemyShooting")
+            Explosion: this.sound.add("Destroyed")
     }; 
           
         var Bullets = new Phaser.Class({
