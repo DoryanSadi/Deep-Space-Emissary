@@ -1,5 +1,6 @@
 //Loading up menu before starting game
 
+
 var startMenu = new Phaser.Class({
     //Creating scene
     Extends: Phaser.Scene,

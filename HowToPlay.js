@@ -11,6 +11,7 @@ var helpMenu = new Phaser.Class({
                           
 preload: function (){
     
+    /* Importing Phaser libraries */
      this.load.scenePlugin({
         key: 'rexuiplugin', 
         url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/plugins/dist/rexuiplugin.min.js',
